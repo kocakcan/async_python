@@ -1,16 +1,17 @@
 """
-    CPU bound tasks are not likely to benefit from async, they are split up to a few processes and threads instead.
+CPU bound tasks are not likely to benefit from async, they are split up to a few processes and threads instead.
 
-    I/O bound tasks: HTTP requests, database access, persistent connections, sending emails
-    CPU bound tasks: Slow algorithms, parsing, string manipulation
+I/O bound tasks: HTTP requests, database access, persistent connections, sending emails
+CPU bound tasks: Slow algorithms, parsing, string manipulation
 
-    async shines in tasks that are I/O bound.
-    At the heart of asynchronous programming is the event loop. The event loop manages tasks using event queue.
-    async/await syntax is used to handle execution over the event loop.
+async shines in tasks that are I/O bound.
+At the heart of asynchronous programming is the event loop. The event loop manages tasks using event queue.
+async/await syntax is used to handle execution over the event loop.
 
-    Blocking functions: Functions that block execution of further code until their execution operation is completed.
-    Non-blocking functions: Functions that return immediately, allowing the program to continue execution. They typically use callbacks, futures, or async/await syntax.
+Blocking functions: Functions that block execution of further code until their execution operation is completed.
+Non-blocking functions: Functions that return immediately, allowing the program to continue execution. They typically use callbacks, futures, or async/await syntax.
 """
+
 import asyncio
 from datetime import datetime
 import click
@@ -37,6 +38,7 @@ import click
         Using await without async results in an error.
     3) Awaiting something does not magically make it async
 """
+
 
 async def sleep_for_five():
     await asyncio.sleep(5)
